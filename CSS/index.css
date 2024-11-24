@@ -207,3 +207,29 @@ body {
     cursor: pointer;
     background-color: #4db748;
 }
+@media all and (width <=640px) {
+    .title-body {
+        font-size: 16px;
+}
+.window-alert {
+    width: 100%;
+}
+
+}
+@media all and (640px < width <=768PX) {
+    .title-body {
+        font-size: 16px;
+    }
+    .window-alert {
+        width: 100%;
+    }
+}
+
+@media all and (768PX < width <=1024px) {
+    .title-body {
+        font-size: 16px;
+    }
+    .window-alert {
+        width: 100%;
+    }
+}
