@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/media.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="icon" href="./images/icon.png">
+    <title>Bookmarker</title>
+</head>
+
+<body>
+    <!-- Title head and (Bookmark your favorite sites) -->
+    <section class="header">
+        <div class="container">
+            <div class="title-head d-flex flex-column justify-content-center align-items-center m-5">
+                <h1>Bookmarker</h1>
+            </div>
+            <hr class="title-hr">
+            <div class="title-body d-flex flex-row justify-content-center align-items-center">
+                <i class="fa-solid fa-bookmark"></i>
+                <p class="m-2">Bookmark your favorite sites</p> <i class="fa-solid fa-bookmark"></i>
+            </div>
+        </div>
+    </section>
+    <!--ALL ALERTS Bookmark-->
+    <div class="Bookmark-form-alert">
+        <div class="container">
+            <!-- big Window Alert 1 -->
+            <div id="bigWindowAlert1" class="alert-block d-none">
+                <div class="container h-100 d-flex justify-content-center align-items-center">
+                    <div class="window-alert rounded-2 p-5 position-relative">
+                        <button id="alertBtn" onclick="closeAlert()"
+                            class="close-icon-1 rounded-circle d-flex justify-content-center align-items-center">
+                            </a><i class="fa-solid fa-x"></i></a>
+                        </button>
+                        <div class="close-icon-2 rounded-circle d-flex justify-content-center align-items-center">
+                        </div>
+                        <div class="close-icon-3 rounded-circle d-flex justify-content-center align-items-center">
+                        </div>
+                        <h4 class="alert-heading">Site Name or Url is not valid, Please follow the rules below :</h4>
+                        <p class="alert-text m-0"><i class="fa-regular fa-circle-right text-danger"></i> Site name must
+                            contain at least 3 characters</p>
+                        <p class="alert-text m-0"><i class="fa-regular fa-circle-right text-danger"></i> Site URL must
+                            be a valid one</p>
+                        <p class="alert-text-ex m-0"> Ex: https://website.com</p>
+                    </div>
+                </div>
+            </div>
+            <!-- big Window Alert 2 -->
+            <div id="bigWindowAlert2" class="alert-block d-none">
+                <div class="container h-100 d-flex justify-content-center align-items-center">
+                    <div class="window-alert rounded-2 p-5 position-relative">
+                        <button id="alertBtn2" onclick="closeAlert2()"
+                            class="close-icon-1 rounded-circle d-flex justify-content-center align-items-center">
+                            </a><i class="fa-solid fa-x"></i></a>
+                        </button>
+                        <div class="close-icon-2 rounded-circle d-flex justify-content-center align-items-center">
+                        </div>
+                        <div class="close-icon-3 rounded-circle d-flex justify-content-center align-items-center">
+                        </div>
+                        <h4 class="alert-heading">Bookmark with the same title already exists</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- big Window Alert 3 -->
+            <div id="bigWindowAlert3" class="alert-block d-none">
+                <div class="container h-100 d-flex justify-content-center align-items-center">
+                    <div class="window-alert rounded-2 p-5 position-relative">
+                        <button id="alertBtn3" onclick="closeAlert3()"
+                            class="close-icon-1 rounded-circle d-flex justify-content-center align-items-center">
+                            </a><i class="fa-solid fa-x"></i></a>
+                        </button>
+                        <div class="close-icon-2 rounded-circle d-flex justify-content-center align-items-center">
+                        </div>
+                        <div class="close-icon-3 rounded-circle d-flex justify-content-center align-items-center">
+                        </div>
+                        <h4 class="alert-heading">Bookmark with the same URL already exists</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- big Window update -->
+            <div id="bigWindowupdate" class="alert-block d-none">
+                <div class="container h-100 d-flex justify-content-center align-items-center">
+                    <div class="window-alert rounded-2 p-5 position-relative d-flex flex-column">
+                        <div class="upadte-titleInput d-flex flex-column m-3">
+                            <button id="alertBtn3" onclick="closeUpdatAlert()"
+                            class="close-icon-1 rounded-circle d-flex justify-content-center align-items-center">
+                            </a><i class="fa-solid fa-x"></i></a>
+                        </button>
+                            <label for="titleInputUpdate" class="my-2 fw-bold"><i
+                                    class="fa-solid fa-book-bookmark"></i> Site Name</label>
+                            <input type="text" id="titleInputUpdate" placeholder="Enter new title:" class="p-1 px-2 rounded-2 border-1">
+                        </div>
+                        <div class="upadte-titleInput-2 d-flex flex-column  m-3">
+                            <label for="urlInputUpdate" class="my-2 fw-bold"><i class="fa-solid fa-link"></i> Site URL</label>
+                            <input type="url" id="urlInputUpdate" placeholder="Enter new URL:" class="p-1 px-2 rounded-2 border-1">
+                        </div>
+                        <button id="updateBtn" onclick="updateBookmark()" type="button" class="update-bookmark m-4">Update Bookmark</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="Bookmark-form">
+        <div class="container">
+            <div id="bookmarkForm" class="bookmarkForm d-flex flex-column">
+                <div class="titleInput-group-1 d-flex flex-column m-3">
+                    <label for="titleInput" class="my-2 fw-bold"><i class="fa-solid fa-book-bookmark"></i> Site
+                        Name</label>
+                    <input type="text" id="titleInput" placeholder="Bookmark Name" class="p-1 px-2 rounded-2 border-1">
+                </div>
+                <div class="titleInput-group-2 d-flex flex-column  m-3">
+                    <label for="urlInput" class="my-2 fw-bold"><i class="fa-solid fa-link"></i> Site URL</label>
+                    <input type="url" id="urlInput" placeholder="Website URL" class="p-1 px-2 rounded-2 border-1">
+                </div>
+                <button id="submitBtn" onclick="addBookmark()" type="submit" class="add-bookmark m-4">Add
+                    Bookmark</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="bookmarks-search">
+        <input type="text" class="form-control mx-auto w-50" oninput="searchBookmarks(this.value)" id="searchInput" placeholder="Search by Bookmark Title ...">    </section>
+    <section class="bookmarks">
+        <div class="container">
+            <div class="bookmarks-title d-flex flex-row justify-content-center align-items-center mb-4">
+                <i class="fa-solid fa-bookmark"></i>
+                <p class="m-2 ">Saved Bookmarks</p> <i class="fa-solid fa-bookmark"></i>
+            </div>
+            <div id="bookmarksList" class="bookmarks-list d-flex flex-column">
+                <div class="grid-container">
+                    <div class="grid-header">Index</div>
+                    <div class="grid-header">Website Name</div>
+                    <div class="grid-header">Visit</div>
+                    <div class="grid-header">Delete</div>
+                    <div class="grid-header">Update</div>
+                    <div id="table-allbookmark" class="grid-row">
+                        <!-- Bookmark list will be dynamically generated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="JS/index.js"></script>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

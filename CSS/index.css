@@ -1,0 +1,315 @@
+/* Background body animation */
+body {
+    background: linear-gradient(45deg, #959595, #ffffff, #a2a2a2);
+    background-size: 400% 400%;
+    animation: waveBackground 10s ease-in-out infinite;
+}
+@keyframes waveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Title head and (Bookmark your favorite sites)*/
+
+.title-head h1{
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    color: #352e28;
+    position: relative;
+}
+.title-head h1::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fec260;
+    height: 15px;
+    width: 100%;
+    z-index: -2;
+    transition: 1s;
+    animation-name: titleafter;
+    animation-duration: 2s;
+    animation-iteration-count: 10;
+    animation-timing-function: ease-in-out;
+}
+.title-head h1:hover::after{
+    height: 40px;
+}
+@keyframes titleafter{
+    0%{
+        height: 15px;
+    }
+    50%{
+        height: 40px;
+    }
+    100%{
+        height: 15px;
+    }
+}
+.title-body{
+    font-family: "Righteous", sans-serif;
+    font-size: 25px;
+    background-image: linear-gradient(to right, #030303 0%, #030303 5%, #fec260 70%, #fec260 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.title-hr{
+    border: 1px dashed #000000;
+}
+.titleInput-group-1 input:focus , .titleInput-group-2 input:focus{
+    box-shadow: 1px 1px 20px #fec260;
+    transition: .3s;
+    border-color: 0px #fec260;
+    outline: none;
+}
+
+/* Bookmark form */
+
+.bookmarkForm button.add-bookmark{
+    font-family: "Righteous", sans-serif;
+    color: #000000;
+    background-color: #fec260;
+    border-radius: 7px;
+    border: none;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: .3s;
+    justify-self: center;
+    align-self: center;
+}
+.bookmarkForm button.add-bookmark:hover{
+    background-color: #ba780e;
+    color: #ffffff;
+}
+
+/* all buttons form */
+.visit-btn{
+    color: #ffffff;
+    background-color:#9eb23b;
+    border-radius: 7px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+.visit-btn:hover{
+    background-color: #8a9e23;
+}
+.delete-btn{
+    color: #ffffff;
+    background-color:#eb1d36;
+    border-radius: 7px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+.delete-btn:hover{
+    background-color: #d30820;
+}
+.update-btn{
+    color: #ffffff;
+    background-color:#ebd61d;
+    border-radius: 7px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+.update-btn:hover{
+    background-color: #ffe600;
+}
+
+/* Window update */
+
+.window-alert input:focus , .titleInput-group-2 input:focus{
+    box-shadow: 1px 1px 20px #fec260;
+    transition: .3s;
+    border-color: 0px #fec260;
+    outline: none;
+}
+/* Window update button*/
+.window-alert .update-bookmark{
+    font-family: "Righteous", sans-serif;
+    color: #000000;
+    background-color: #fec260;
+    border-radius: 7px;
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: .3s;
+    justify-self: center;
+    align-self: center;
+
+}
+.window-alert .update-bookmark:hover{
+    background-color: #ba780e;
+    color: #ffffff;
+}
+
+/* bookmarks display table*/
+
+.bookmarks-title{
+    font-family: "Righteous", sans-serif;
+    font-size: 20px;
+    background-image: linear-gradient(to right, #030303 0%, #030303 5%, #fec260 70%, #fec260 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: .2fr 2fr .4fr .4fr .4fr;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.grid-header {
+    font-weight: bold;
+    background-color: #e9ecef;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+}
+
+.grid-row {
+    display: contents;
+}
+
+.grid-container div {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+}
+
+
+/* Alerts */
+
+.alert-block{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(35, 35, 35, 0.5);
+}
+
+.window-alert{
+    width:45%;
+    background-color: #ffffff;
+    z-index: 999;
+}
+.alert-heading{
+    font-family: "Righteous", sans-serif;
+    font-size: 20px;
+    color: #352e28;
+    padding: 10px;
+    padding-top: 40px;
+}
+.alert-text{
+    font-weight: 500;
+    font-size: 18px;
+    color: #352e28;
+    padding-top: 10px;
+}
+.alert-text-ex{
+    color: #b5b5b5;
+    padding-left: 24px;
+
+}
+
+
+/* head icons */
+
+.close-icon-1{
+    position: absolute;
+    top: 40px;
+    left: 52px;
+    height: 20px;
+    width: 20px;
+    color: #f15f5d;
+    background-color: #f15f5d;
+    cursor: pointer;
+    border: none;
+    transition: .3s;
+}
+.close-icon-1:hover{
+    color: white;
+}
+.close-icon-2{
+    position: absolute;
+    top: 40px;
+    left: 79px;
+    height: 20px;
+    width: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #febe2e;
+}
+.close-icon-3{
+    position: absolute;
+    top: 40px;
+    left: 106px;
+    height: 20px;
+    width: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #4db748;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (width <=640px) {
+    .title-body {
+        font-size: 16px;
+}
+.window-alert {
+    width: 100%;
+}
+
+}
+@media all and (640px < width <=768PX) {
+    .title-body {
+        font-size: 16px;
+    }
+    .window-alert {
+        width: 100%;
+    }
+}
+
+@media all and (768PX < width <=1024px) {
+    .title-body {
+        font-size: 16px;
+    }
+    .window-alert {
+        width: 100%;
+    }
+}
