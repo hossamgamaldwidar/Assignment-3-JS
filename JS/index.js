@@ -4,6 +4,7 @@ var submitBtn = document.getElementById('submitBtn');
 var bigWindowAlert1 = document.getElementById('bigWindowAlert1');
 var bigWindowAlert2 = document.getElementById('bigWindowAlert2');
 var bigWindowAlert3 = document.getElementById('bigWindowAlert3');
+var bigWindowAlert4 = document.getElementById('bigWindowAlert4');
 var titleInputUpdate = document.getElementById("titleInputUpdate");
 var urlInputUpdate = document.getElementById('urlInputUpdate');
 var lastIndex;
@@ -60,7 +61,7 @@ function displayBookmarks(bookmarksToDisplay) {
         <div>${i + 1}</div>
         <div>${bookmarksToDisplay[i].title}</div>
         <div><a href="${bookmarksToDisplay[i].url}" target="_blank"><button class="visit-btn"><i class="fa-solid fa-eye"></i> Visit</button></a></div>
-        <div><button class="delete-btn" onclick="deleteBookmark(${i})"><i class="fa-solid fa-trash-can"></i> Delete</button></div>
+        <div><button class="delete-btn" onclick="getAlert4(${i})"><i class="fa-solid fa-trash-can"></i> Delete</button></div>
         <div><button class="update-btn" onclick="getUpdatAlert(${i})"><i class="fa-solid fa-pen-to-square"></i> Update</button></div>
         `;
     }
@@ -70,7 +71,8 @@ function displayBookmarks(bookmarksToDisplay) {
 function deleteBookmark(index) {
     bookmarks.splice(index, 1);
     localStorage.setItem('allBookmarks', JSON.stringify(bookmarks));
-    displayBookmarks(bookmarks); // إعادة عرض الـ bookmarks بعد الحذف
+    displayBookmarks(bookmarks);
+    closeAlert4()
 }
 
 function clearBookmarkForm() {
@@ -151,10 +153,18 @@ function closeAlert3() {
     bigWindowAlert3.classList.add('d-none');
 }
 
+function getAlert4() {
+    bigWindowAlert4.classList.remove('d-none');
+}
+
+function closeAlert4() {
+    bigWindowAlert4.classList.add('d-none');
+}
+
+
 function closeUpdatAlert() {
     bigWindowupdate.classList.add('d-none');
 }
-
 function searchBookmarks(searchkey) {
     var result = [];
     for (var i = 0; i < bookmarks.length; i++) {

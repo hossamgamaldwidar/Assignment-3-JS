@@ -154,6 +154,24 @@ body {
     background-color: #ba780e;
     color: #ffffff;
 }
+/* Window delet sure button*/
+.window-alert .sure-delet{
+    font-family: "Righteous", sans-serif;
+    color: #ffffff;
+    background-color: #eb1d36;
+    border-radius: 7px;
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: .3s;
+    justify-self: center;
+    align-self: center;
+
+}
+.window-alert .sure-delet:hover{
+    background-color: #d30820;
+    color: #ffffff;
+}
 
 /* bookmarks display table*/
 
