@@ -8,6 +8,7 @@ var bigWindowAlert4 = document.getElementById('bigWindowAlert4');
 var titleInputUpdate = document.getElementById("titleInputUpdate");
 var urlInputUpdate = document.getElementById('urlInputUpdate');
 var lastIndex;
+var lastIndexD;
 var bookmarks = [];
 
 if (localStorage.getItem('allBookmarks')) {
@@ -67,12 +68,15 @@ function displayBookmarks(bookmarksToDisplay) {
     }
     document.getElementById("table-allbookmark").innerHTML = bookmarksContainer;
 }
-
-function deleteBookmark(index) {
-    bookmarks.splice(index, 1);
+function getAlert4(index) {
+    bigWindowAlert4.classList.remove('d-none');
+    lastIndexD = index;
+}
+function deleteBookmark() {
+    bookmarks.splice(lastIndexD, 1);
     localStorage.setItem('allBookmarks', JSON.stringify(bookmarks));
-    displayBookmarks(bookmarks);
-    closeAlert4()
+    displayBookmarks(bookmarks); 
+    closeAlert4(); 
 }
 
 function clearBookmarkForm() {
@@ -153,9 +157,9 @@ function closeAlert3() {
     bigWindowAlert3.classList.add('d-none');
 }
 
-function getAlert4() {
-    bigWindowAlert4.classList.remove('d-none');
-}
+// function getAlert4() {
+//     bigWindowAlert4.classList.remove('d-none');
+// }
 
 function closeAlert4() {
     bigWindowAlert4.classList.add('d-none');
