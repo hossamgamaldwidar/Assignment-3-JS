@@ -13,11 +13,11 @@ var bookmarks = [];
 
 if (localStorage.getItem('allBookmarks')) {
     bookmarks = JSON.parse(localStorage.getItem('allBookmarks'));
-    displayBookmarks(bookmarks); 
+    displayBookmarks(bookmarks);
 }
 
 function isValidURL(url) {
-    return url.startsWith('http://') || url.startsWith('https://'); 
+    return url.startsWith('http://') || url.startsWith('https://');
 }
 
 function addBookmark() {
@@ -75,8 +75,8 @@ function getAlert4(index) {
 function deleteBookmark() {
     bookmarks.splice(lastIndexD, 1);
     localStorage.setItem('allBookmarks', JSON.stringify(bookmarks));
-    displayBookmarks(bookmarks); 
-    closeAlert4(); 
+    displayBookmarks(bookmarks);
+    closeAlert4();
 }
 
 function clearBookmarkForm() {
@@ -130,7 +130,7 @@ function updateBookmark() {
     localStorage.setItem('allBookmarks', JSON.stringify(bookmarks));
     clearBookmarkForm();
     closeUpdatAlert();
-    displayBookmarks(bookmarks); 
+    displayBookmarks(bookmarks);
 }
 
 function getAlert() {
@@ -176,21 +176,31 @@ function searchBookmarks(searchkey) {
 }
 function wrongIinputName() {
     if (titleInput.value.trim().length < 4) {
-        titleInput.classList.replace("input-titleInput", "wrongInput");
+        titleInput.classList.remove("input-titleInput");
+        titleInput.classList.add("wrongInput");
+        titleInput.classList.remove("truInput");
     } 
     else{
+        titleInput.classList.remove("wrongInput");
         titleInput.classList.add("truInput");
+        titleInput.classList.remove("input-titleInput");
     }
 }
+
 function wrongIinputURL() {
     if (urlInput.value.trim().length < 4) {
-        urlInput.classList.replace("input-urlInput", "wrongInput");
-    } 
+        urlInput.classList.remove("input-urlInput");
+        urlInput.classList.add("wrongInput");
+        urlInput.classList.remove("truInput");
+    }
     else if (!(urlInput.value.startsWith('http://') || urlInput.value.startsWith('https://'))) {
-        urlInput.classList.replace("input-urlInput", "wrongInput");
+        urlInput.classList.remove("input-urlInput");
+        urlInput.classList.add("wrongInput");
+        urlInput.classList.remove("truInput"); 
     }
     else {
-        urlInput.classList.add("truInput");
-        urlInput.classList.remove("wrongInput");
+         urlInput.classList.remove("wrongInput")
+         urlInput.classList.add("truInput");
+         urlInput.classList.remove("input-urlInput");
     }
 }
