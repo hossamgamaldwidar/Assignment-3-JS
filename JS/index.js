@@ -177,8 +177,9 @@ function searchBookmarks(searchkey) {
 function wrongIinputName() {
     if (titleInput.value.trim().length < 4) {
         titleInput.classList.replace("input-titleInput", "wrongInput");
-    } else {
-        titleInput.classList.add("input-titleInput");
+    } 
+    else{
+        titleInput.classList.add("truInput");
     }
 }
 function wrongIinputURL() {
@@ -189,7 +190,7 @@ function wrongIinputURL() {
         urlInput.classList.replace("input-urlInput", "wrongInput");
     }
     else {
-        urlInput.classList.add("input-urlInput");
+        urlInput.classList.add("truInput");
         urlInput.classList.remove("wrongInput");
     }
 }

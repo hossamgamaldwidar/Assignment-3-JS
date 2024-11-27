@@ -79,9 +79,9 @@ body {
 .titleInput-group-2 .input-urlInput:focus {
     box-shadow: 1px 1px 20px 5px #ff9d00;
     transition: .3s;
-    border-color: 0px #fec260;
     outline: none;
-    background-image:none;
+    border-color: 1px #fec260;
+    background-image: none;
 }
 
 .wrongInput:focus {
@@ -91,6 +91,19 @@ body {
     outline: none;
     position: relative;
     background-image: url(../Images/images.png);
+    background-position: 99.5%;
+    padding-right: 40px;
+    background-size: 1.5%;
+    background-repeat: no-repeat;
+}
+
+.truInput:focus {
+    box-shadow: 1px 1px 20px #198754;
+    transition: .3s;
+    border-color: 0px #198754;
+    outline: none;
+    position: relative;
+    background-image: url(../Images/images2.png);
     background-position: 99.5%;
     padding-right: 40px;
     background-size: 1.5%;
