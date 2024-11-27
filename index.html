@@ -98,7 +98,8 @@
                         <div class="close-icon-3 rounded-circle d-flex justify-content-center align-items-center">
                         </div>
                         <h4 class="alert-heading pt-5">Are you sure you want to delete this item?</h4>
-                        <button id="sureBtn" onclick="deleteBookmark()" type="button" class="sure-delet ms-2">Yes,I'm sure</button>
+                        <button id="sureBtn" onclick="deleteBookmark()" type="button" class="sure-delet ms-2">Yes,I'm
+                            sure</button>
                     </div>
                 </div>
             </div>
@@ -108,47 +109,51 @@
                     <div class="window-alert rounded-2 p-5 position-relative d-flex flex-column">
                         <div class="upadte-titleInput d-flex flex-column m-3">
                             <button id="alertBtn3" onclick="closeUpdatAlert()"
-                            class="close-icon-1 rounded-circle d-flex justify-content-center align-items-center">
-                            </a><i class="fa-solid fa-x"></i></a>
-                        </button>
-                            <label for="titleInputUpdate" class="my-2 fw-bold"><i
-                                    class="fa-solid fa-book-bookmark"></i> Site Name</label>
-                            <input type="text" id="titleInputUpdate" placeholder="Enter new title:" class="p-1 px-2 rounded-2 border-1">
+                                class="close-icon-1 rounded-circle d-flex justify-content-center align-items-center">
+                                </a><i class="fa-solid fa-x"></i></a>
+                            </button>
+                            <label for="titleInputUpdate" class="my-2 fw-bold"><i class="fa-solid fa-book-bookmark"></i>
+                                Site Name</label>
+                            <input type="text" id="titleInputUpdate" placeholder="Enter new title:"
+                                class="p-1 px-2 rounded-2 border-1">
                         </div>
                         <div class="upadte-titleInput-2 d-flex flex-column  m-3">
-                            <label for="urlInputUpdate" class="my-2 fw-bold"><i class="fa-solid fa-link"></i> Site URL</label>
-                            <input type="url" id="urlInputUpdate" placeholder="Enter new URL:" class="p-1 px-2 rounded-2 border-1">
+                            <label for="urlInputUpdate" class="my-2 fw-bold"><i class="fa-solid fa-link"></i> Site
+                                URL</label>
+                            <input type="url" id="urlInputUpdate" placeholder="Enter new URL:"
+                                class="p-1 px-2 rounded-2 border-1">
                         </div>
-                        <button id="updateBtn" onclick="updateBookmark()" type="button" class="update-bookmark m-4">Update Bookmark</button>
+                        <button id="updateBtn" onclick="updateBookmark()" type="button"
+                            class="update-bookmark m-4">Update Bookmark</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-
+    <!-- Bookmark form -->
 
     <div class="Bookmark-form">
         <div class="container">
             <div id="bookmarkForm" class="bookmarkForm d-flex flex-column">
                 <div class="titleInput-group-1 d-flex flex-column m-3">
-                    <label for="titleInput" class="my-2 fw-bold"><i class="fa-solid fa-book-bookmark"></i> Site
-                        Name</label>
-                    <input type="text" id="titleInput" placeholder="Bookmark Name" class="p-1 px-2 rounded-2 border-1">
+                    <label for="titleInput" class="my-2 fw-bold"><i class="fa-solid fa-book-bookmark"></i> Site Name</label>
+                    <input oninput="wrongIinputName()" type="text" id="titleInput" placeholder="Bookmark Name" class="input-titleInput p-1 px-2 rounded-2 border-1">
                 </div>
                 <div class="titleInput-group-2 d-flex flex-column  m-3">
                     <label for="urlInput" class="my-2 fw-bold"><i class="fa-solid fa-link"></i> Site URL</label>
-                    <input type="url" id="urlInput" placeholder="Website URL" class="p-1 px-2 rounded-2 border-1">
+                    <input oninput="wrongIinputURL()" type="url" id="urlInput" placeholder="Website URL" class="input-urlInput p-1 px-2 rounded-2 border-1">
                 </div>
-                <button id="submitBtn" onclick="addBookmark()" type="submit" class="add-bookmark m-4">Add
+                <button id="submitBtn" onclick="addBookmark()" type="submit" class=" add-bookmark m-4">Add
                     Bookmark</button>
             </div>
         </div>
     </div>
 
     <section class="bookmarks-search">
-        <input type="text" class="form-control mx-auto w-50" oninput="searchBookmarks(this.value)" id="searchInput" placeholder="Search by Bookmark Title ...">    </section>
+        <input type="text" class="form-control mx-auto w-50" oninput="searchBookmarks(this.value)" id="searchInput"
+            placeholder="Search by Bookmark Title ...">
+    </section>
     <section class="bookmarks">
         <div class="container">
             <div class="bookmarks-title d-flex flex-row justify-content-center align-items-center mb-4">

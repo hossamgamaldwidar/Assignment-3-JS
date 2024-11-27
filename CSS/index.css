@@ -4,13 +4,16 @@ body {
     background-size: 400% 400%;
     animation: waveBackground 10s ease-in-out infinite;
 }
+
 @keyframes waveBackground {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -18,13 +21,14 @@ body {
 
 /* Title head and (Bookmark your favorite sites)*/
 
-.title-head h1{
+.title-head h1 {
     font-family: "Pacifico", cursive;
     font-size: 50px;
     color: #352e28;
     position: relative;
 }
-.title-head h1::after{
+
+.title-head h1::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -40,40 +44,62 @@ body {
     animation-iteration-count: 10;
     animation-timing-function: ease-in-out;
 }
-.title-head h1:hover::after{
+
+.title-head h1:hover::after {
     height: 40px;
 }
-@keyframes titleafter{
-    0%{
+
+@keyframes titleafter {
+    0% {
         height: 15px;
     }
-    50%{
+
+    50% {
         height: 40px;
     }
-    100%{
+
+    100% {
         height: 15px;
     }
 }
-.title-body{
+
+.title-body {
     font-family: "Righteous", sans-serif;
     font-size: 25px;
     background-image: linear-gradient(to right, #030303 0%, #030303 5%, #fec260 70%, #fec260 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.title-hr{
+
+.title-hr {
     border: 1px dashed #000000;
 }
-.titleInput-group-1 input:focus , .titleInput-group-2 input:focus{
-    box-shadow: 1px 1px 20px #fec260;
+
+.titleInput-group-1 .input-titleInput:focus,
+.titleInput-group-2 .input-urlInput:focus {
+    box-shadow: 1px 1px 20px 5px #ff9d00;
     transition: .3s;
     border-color: 0px #fec260;
     outline: none;
+    background-image:none;
+}
+
+.wrongInput:focus {
+    box-shadow: 1px 1px 20px #ff001e;
+    transition: .3s;
+    border-color: 0px #ff001e;
+    outline: none;
+    position: relative;
+    background-image: url(../Images/images.png);
+    background-position: 99.5%;
+    padding-right: 40px;
+    background-size: 1.5%;
+    background-repeat: no-repeat;
 }
 
 /* Bookmark form */
 
-.bookmarkForm button.add-bookmark{
+.bookmarkForm button.add-bookmark {
     font-family: "Righteous", sans-serif;
     color: #000000;
     background-color: #fec260;
@@ -85,59 +111,67 @@ body {
     justify-self: center;
     align-self: center;
 }
-.bookmarkForm button.add-bookmark:hover{
+
+.bookmarkForm button.add-bookmark:hover {
     background-color: #ba780e;
     color: #ffffff;
 }
 
 /* all buttons form */
-.visit-btn{
+.visit-btn {
     color: #ffffff;
-    background-color:#9eb23b;
+    background-color: #9eb23b;
     border-radius: 7px;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     transition: .3s;
 }
-.visit-btn:hover{
+
+.visit-btn:hover {
     background-color: #8a9e23;
 }
-.delete-btn{
+
+.delete-btn {
     color: #ffffff;
-    background-color:#eb1d36;
+    background-color: #eb1d36;
     border-radius: 7px;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     transition: .3s;
 }
-.delete-btn:hover{
+
+.delete-btn:hover {
     background-color: #d30820;
 }
-.update-btn{
+
+.update-btn {
     color: #ffffff;
-    background-color:#ebd61d;
+    background-color: #ebd61d;
     border-radius: 7px;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     transition: .3s;
 }
-.update-btn:hover{
+
+.update-btn:hover {
     background-color: #ffe600;
 }
 
 /* Window update */
 
-.window-alert input:focus , .titleInput-group-2 input:focus{
+.window-alert input:focus,
+.window-alert input:focus {
     box-shadow: 1px 1px 20px #fec260;
     transition: .3s;
     border-color: 0px #fec260;
     outline: none;
 }
+
 /* Window update button*/
-.window-alert .update-bookmark{
+.window-alert .update-bookmark {
     font-family: "Righteous", sans-serif;
     color: #000000;
     background-color: #fec260;
@@ -150,12 +184,14 @@ body {
     align-self: center;
 
 }
-.window-alert .update-bookmark:hover{
+
+.window-alert .update-bookmark:hover {
     background-color: #ba780e;
     color: #ffffff;
 }
+
 /* Window delet sure button*/
-.window-alert .sure-delet{
+.window-alert .sure-delet {
     font-family: "Righteous", sans-serif;
     color: #ffffff;
     background-color: #eb1d36;
@@ -168,14 +204,15 @@ body {
     align-self: center;
 
 }
-.window-alert .sure-delet:hover{
+
+.window-alert .sure-delet:hover {
     background-color: #d30820;
     color: #ffffff;
 }
 
 /* bookmarks display table*/
 
-.bookmarks-title{
+.bookmarks-title {
     font-family: "Righteous", sans-serif;
     font-size: 20px;
     background-image: linear-gradient(to right, #030303 0%, #030303 5%, #fec260 70%, #fec260 100%);
@@ -212,7 +249,7 @@ body {
 
 /* Alerts */
 
-.alert-block{
+.alert-block {
     position: fixed;
     top: 0;
     left: 0;
@@ -221,25 +258,28 @@ body {
     background-color: rgba(35, 35, 35, 0.5);
 }
 
-.window-alert{
-    width:45%;
+.window-alert {
+    width: 45%;
     background-color: #ffffff;
     z-index: 999;
 }
-.alert-heading{
+
+.alert-heading {
     font-family: "Righteous", sans-serif;
     font-size: 20px;
     color: #352e28;
     padding: 10px;
     padding-top: 40px;
 }
-.alert-text{
+
+.alert-text {
     font-weight: 500;
     font-size: 18px;
     color: #352e28;
     padding-top: 10px;
 }
-.alert-text-ex{
+
+.alert-text-ex {
     color: #b5b5b5;
     padding-left: 24px;
 
@@ -248,7 +288,7 @@ body {
 
 /* head icons */
 
-.close-icon-1{
+.close-icon-1 {
     position: absolute;
     top: 40px;
     left: 52px;
@@ -260,10 +300,12 @@ body {
     border: none;
     transition: .3s;
 }
-.close-icon-1:hover{
+
+.close-icon-1:hover {
     color: white;
 }
-.close-icon-2{
+
+.close-icon-2 {
     position: absolute;
     top: 40px;
     left: 79px;
@@ -273,7 +315,8 @@ body {
     cursor: pointer;
     background-color: #febe2e;
 }
-.close-icon-3{
+
+.close-icon-3 {
     position: absolute;
     top: 40px;
     left: 106px;
@@ -284,40 +327,22 @@ body {
     background-color: #4db748;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media all and (width <=640px) {
     .title-body {
         font-size: 16px;
-}
-.window-alert {
-    width: 100%;
-}
+    }
+
+    .window-alert {
+        width: 100%;
+    }
 
 }
+
 @media all and (640px < width <=768PX) {
     .title-body {
         font-size: 16px;
     }
+
     .window-alert {
         width: 100%;
     }
@@ -327,6 +352,7 @@ body {
     .title-body {
         font-size: 16px;
     }
+
     .window-alert {
         width: 100%;
     }

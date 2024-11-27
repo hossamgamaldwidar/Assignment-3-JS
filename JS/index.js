@@ -13,11 +13,11 @@ var bookmarks = [];
 
 if (localStorage.getItem('allBookmarks')) {
     bookmarks = JSON.parse(localStorage.getItem('allBookmarks'));
-    displayBookmarks(bookmarks);  // عرض جميع الـ bookmarks عند تحميل الصفحة
+    displayBookmarks(bookmarks); 
 }
 
 function isValidURL(url) {
-    return url.startsWith('http://') || url.startsWith('https://');
+    return url.startsWith('http://') || url.startsWith('https://'); 
 }
 
 function addBookmark() {
@@ -52,7 +52,7 @@ function addBookmark() {
     bookmarks.push(bookmark);
     localStorage.setItem('allBookmarks', JSON.stringify(bookmarks));
     clearBookmarkForm();
-    displayBookmarks(bookmarks); // عرض الـ bookmarks بعد الإضافة
+    displayBookmarks(bookmarks);
 }
 
 function displayBookmarks(bookmarksToDisplay) {
@@ -157,10 +157,6 @@ function closeAlert3() {
     bigWindowAlert3.classList.add('d-none');
 }
 
-// function getAlert4() {
-//     bigWindowAlert4.classList.remove('d-none');
-// }
-
 function closeAlert4() {
     bigWindowAlert4.classList.add('d-none');
 }
@@ -177,4 +173,23 @@ function searchBookmarks(searchkey) {
         }
     }
     displayBookmarks(result);
+}
+function wrongIinputName() {
+    if (titleInput.value.trim().length < 4) {
+        titleInput.classList.replace("input-titleInput", "wrongInput");
+    } else {
+        titleInput.classList.add("input-titleInput");
+    }
+}
+function wrongIinputURL() {
+    if (urlInput.value.trim().length < 4) {
+        urlInput.classList.replace("input-urlInput", "wrongInput");
+    } 
+    else if (!(urlInput.value.startsWith('http://') || urlInput.value.startsWith('https://'))) {
+        urlInput.classList.replace("input-urlInput", "wrongInput");
+    }
+    else {
+        urlInput.classList.add("input-urlInput");
+        urlInput.classList.remove("wrongInput");
+    }
 }
